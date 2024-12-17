@@ -1,0 +1,10 @@
+[project]
+name = "bot-licitacao"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "embedchain>=0.1.125",
+    "streamlit>=1.41.1",
+]
