@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y \
 RUN wget https://ollama.ai/install.sh -O - | bash
 
 # Cria diretório para rodar o aplicativo
-WORKDIR /ollama_pdf_rag
+WORKDIR /bot-licitacao
 
 # Clona o repositório do Streamlit
-RUN git clone https://github.com/tonykipkemboi/ollama_pdf_rag.git .
+RUN git clone https://github.com/Alexandre-Magno/bot-licitacao .
 
 # Instala as dependências do Python
 RUN pip3 install --no-cache-dir -r requirements.txt
