@@ -6,17 +6,22 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     wget \
+    libgl1-mesa-glx \ 
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Instala Ollama
 RUN wget https://ollama.ai/install.sh -O - | bash
 
+
+# Copia arquivos locais para o container
 # Cria diretório para rodar o aplicativo
 WORKDIR /bot-licitacao
 
 # Clona o repositório do Streamlit
 RUN git clone https://github.com/Alexandre-Magno/bot-licitacao .
 
+COPY scammer-agent.pdf /bot-licitacao/scammer-agent.pdf
 # Instala as dependências do Python
 RUN pip3 install --no-cache-dir -r requirements.txt
 

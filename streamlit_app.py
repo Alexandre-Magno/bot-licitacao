@@ -82,8 +82,8 @@ def create_vector_db(file_upload) -> Chroma:
     with open(path, "wb") as f:
         f.write(file_upload.getvalue())
         logger.info(f"File saved to temporary path: {path}")
-    loader = UnstructuredPDFLoader(path)
-    data = loader.load()
+        loader = UnstructuredPDFLoader(path)
+        data = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=7500, chunk_overlap=100)
     chunks = text_splitter.split_documents(data)
