@@ -13,3 +13,8 @@ dependencies = [
 dev = [
     "pytest>=8.3.4",
 ]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest-cov>=6.0.0",
+]

@@ -31,7 +31,8 @@ EXPOSE 8501 11434
 # Baixa os modelos na inicialização do container
 CMD ollama serve & \
     sleep 5 && \
-    ollama pull llama2 && \
+    ollama pull llama3.2 && \
+    ollama pull llama3 && \
     ollama pull nomic-embed-text && \
     streamlit run streamlit_app.py --server.port=8501 --server.address=0.0.0.0
 
