@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # coleta das publicações do dia
     today = datetime.today().strftime("%Y%m%d")
-    today = "20241227"
+    today = "20241230"
     for uf in list_of_ufs:
         for modalidade in list_of_modalidades:
             print(f"Coletando publicações para {uf} e modalidade {modalidade}")
