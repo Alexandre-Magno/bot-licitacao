@@ -1,7 +1,7 @@
 import sqlite3
 
 
-class SetupDB:
+class DB:
     def __init__(self, db_name):
         self.db_name = db_name
         self.conn = sqlite3.connect(self.db_name)
@@ -13,7 +13,3 @@ class SetupDB:
             sql_script = file.read()
         self.cursor.executescript(sql_script)
         self.conn.commit()
-
-
-db_setup = SetupDB("db/pncp.db")
-db_setup.execute_sql_file(db_setup.file_path_create_table)

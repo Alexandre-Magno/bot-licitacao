@@ -1,5 +1,4 @@
 import requests
-import tempfile
 import json
 import os
 
@@ -32,7 +31,7 @@ class Coletor:
         file_path = os.path.join(tempo_dir, f"publicacoes_{uf}_{pagina}.json")
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
-        print(f"JSON salvo em: {file_path}")
+        print(f"JSON salvo com sucesso!")
         return file_path
 
     def coleta_todas_publicacoes(self, data: str, uf: str, modalidade: int):
@@ -49,7 +48,3 @@ class Coletor:
             except requests.exceptions.HTTPError as e:
                 print(f"Erro ao coletar publicações: {e}")
                 break
-
-
-coletor = Coletor()
-response = coletor.coleta_todas_publicacoes("20241220", "go", 8)
